@@ -128,6 +128,18 @@ a:hover {
   text-decoration-line: underline overline;
 }
 
+a.local {
+  text-decoration: underline dashed 1px;
+}
+
+a.local:hover {
+  text-decoration-line: underline overline;
+}
+
+a.local:visited {
+  color: var(--fg-colour);
+}
+
 button,
 input {
   margin: calc(var(--d) * 4) 0;
