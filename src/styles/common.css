@@ -318,6 +318,20 @@ pre {
 
 .founder-photo {
   margin: 0;
+  position: relative;
+  width: fit-content; /* Contains the figure to the image size */
+}
+
+.founder-photo figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: right;
+  color: white; /* Light text for contrast */
+  opacity: 0.5;
+  padding: 8px; /* Add some padding for readability */
+  font-size: 0.8rem; /* Slightly smaller text */
 }
 
 /* IDs */
