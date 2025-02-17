@@ -165,8 +165,8 @@ img {
 }
 
 figure {
-  margin: auto;
-  text-align: center;
+  margin: calc(var(--d) * 4);
+  text-align: start;
 }
 
 select {
@@ -309,6 +309,15 @@ pre {
 
 .is-border {
   background-color: var(--border-colour);
+}
+
+.founder {
+  display: flex;
+  flex-direction: column;
+}
+
+.founder-photo {
+  margin: 0;
 }
 
 /* IDs */
