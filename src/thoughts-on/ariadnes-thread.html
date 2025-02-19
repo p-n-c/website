@@ -63,13 +63,13 @@
             <h3 id="convergent-divergent">Convergent / divergent thinking</h3>
             <p>
               The interactions described here relate in the main to convergent
-              cognitive tasks which are generally more goal-oriented and
-              structured.
+              thinking (refining ideas) which is generally more goal-oriented
+              and structured.
             </p>
             <p>
-              When it comes to divergent thinking, the developer is advised to
-              be sceptical of LLM responses and to not become attached to their
-              outpourings.
+              When it comes to divergent thinking (creation of novel ideas), the
+              developer is advised to be sceptical of LLM responses and to not
+              become attached to their outpourings.
             </p>
             <p>Whatever the task, use LLMs sparingly.</p>
             <blockquote cite="https://arxiv.org/abs/2410.03703">
@@ -93,11 +93,16 @@
               <a href="https://github.com/p-n-c/ariadnes-thread"
                 >Ariadne's Thread</a
               >
-              fulfills these requirements by using prompt threads.
+              fulfills the need for distance, autonomy and discipline.
             </p>
             <p>
-              They are a consistent, informal approach to structuring and
+              It is a consistent, informal approach to structuring and
               documenting interactions.
+            </p>
+            <p>
+              Specifically, the developer considers in detail what they are
+              trying to achieve before deciding how to proceed. The thread will
+              lead them to safety.
             </p>
           </section>
           <section aria-labelledby="prompt-thread">
@@ -107,8 +112,8 @@
               an LLM during the conversion of an idea into a prototype.
             </p>
             <p>
-              At the outset of a discussion on prototyping a new idea, the
-              developer submits two files:
+              In order to create a prompt thread, the developer submits two
+              files:
             </p>
             <ul>
               <li>
@@ -128,11 +133,10 @@
               </li>
             </ul>
             <p>
-              Given a <abbr title="Project Prototype Definition">PDD</abbr>, the
-              developer and the LLM start their back-and-forth. When a
-              significant juncture is reached, the developer asks the LLM to
+              The developer and the LLM can now begin their back-and-forth. When
+              a significant juncture is reached, the developer asks the LLM to
               generate a thread extension which is a snapshot of progress to
-              date but which continues, or extends, the thread of the
+              date but which also continues, or extends, the thread of the
               discussion.
             </p>
             <p>
@@ -143,9 +147,19 @@
                 >thread history</a
               >.
             </p>
+            <section aria-labelledby="thread-history">
+              <h3 id="thread-history">Thread history - a chain of reasoning</h3>
+            </section>
             <p>
               A single snapshot, or the entire thread history, are available to
               instigate an interaction with another LLM or another developer.
+            </p>
+            <p>
+              For example, the developer passes the final snapshot from a
+              concept prototype into a new prompt thread for a horizontal
+              prototype. The final snapshot from this exercise is passed to a
+              designer, whose input informs the prompt thread for a functional
+              prototype, and so on.
             </p>
             <p>
               Each snapshot also marks a pause in - or an end to - the
