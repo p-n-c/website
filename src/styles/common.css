@@ -25,6 +25,10 @@
 }
 
 /* Base */
+:is(*):not(h1, h2, h3, h4, h5, h6, footer, nav, header) {
+  font-size: var(--max-font-size);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -198,6 +202,51 @@ pre {
   padding: calc(var(--d) * 2);
 }
 
+dt,
+dd {
+  font-size: calc(var(--d) * 4);
+  line-height: 1.6;
+
+  a {
+    font-size: calc(var(--d) * 4);
+    line-height: 1.6;
+  }
+}
+
+dt {
+  font-weight: 700;
+}
+
+blockquote {
+  * {
+    font-size: calc(var(--d) * 4);
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--fg-colour);
+    text-underline-offset: calc(var(--d) * 1.8);
+    text-decoration: underline;
+  }
+}
+
+aside {
+  padding: calc(var(--d) * 2) calc(var(--d) * 4);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--radius);
+  margin: calc(var(--d) * 4) 0;
+  line-height: 1.7;
+
+  & h3 {
+    margin-top: var(--d);
+    margin-bottom: 0;
+  }
+
+  & * {
+    font-size: calc(var(--d) * 4);
+  }
+}
+
 /* Classes */
 
 .box {
@@ -341,11 +390,6 @@ pre {
 /* IDs */
 #writing {
   scroll-margin-top: var(--header-height);
-}
-
-/* Overrides */
-:is(*):not(h1, h2, h3, h4, h5, h6, footer, nav, header) {
-  font-size: var(--max-font-size);
 }
 
 cite *,
