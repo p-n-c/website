@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Structuring and documenting interactions between developers and LLMs"
+    />
+    <link rel="stylesheet" href="/src/styles/common.css" />
+    <title>Ariadne's Thread</title>
+    <link rel="icon" type="image/x-icon" href="/src/media/favicon.ico" />
+  </head>
+  <body class="body">
+    <header>
+      <a href="#main" class="skip">Skip to main content</a>
+      <div>
+        <h1>Ariadne's Thread</h1>
+      </div>
+    </header>
+    <main id="main" class="main">
+      <div class="byline">
+        <img
+          class="byline-logo"
+          src="/src/media/pac-logo.svg"
+          alt="People and code logo."
+        />
+        <div>
+          <div class="byline-brand">People and Code</div>
+          <div class="byline-tagline">At Your Disposal</div>
+        </div>
+      </div>
+      <article>
+        <p>It's easy to get lost during an extended chat with an LLM.</p>
+        <p>
+          As the interaction metastasises, the developer becomes disoriented.
+          This is frustrating and wasteful of time, effort and resources.
+        </p>
+        <p>
+          One approach is to increase the context window thereby enabling a
+          richer and more specific experience or use multiple LLMs, or both.
+        </p>
+        <p>
+          There is another, less impactful way. More important than the prompts
+          the developer puts to the LLM, are the human prompts they direct
+          towards themselves.
+        </p>
+        <section aria-labelledby="labyrinth">
+          <h2 id="labyrinth">Escaping the labyrinth</h2>
+          <p>
+            There is no evidence of spontaneous intelligence in LLMs. The
+            developer is solely responsible for what happens, and makes all of
+            the decisions. There is therefore an extreme asymmetry between the
+            human and the LLM when they work together.
+          </p>
+          <p>
+            If the developer is director, writer and conductor, they must know
+            what's going on; they need a goal or a plan, a way to oversee what
+            is happening, and a means of getting back on track when the
+            discussion deviates.
+          </p>
+          <p>
+            <a href="https://github.com/p-n-c/ariadnes-thread"
+              >Ariadne's Thread</a
+            >
+            fulfills these requirements by using prompt threads.
+          </p>
+          <p>
+            They are a consistent, informal approach to structuring and
+            documenting interactions.
+          </p>
+          <section aria-labelledby="prompt-thread">
+            <h3 id="prompt-thread">Setting up a prompt thread</h3>
+            <p>
+              A prompt thread mediates the interactions between a developer and
+              an LLM during the conversion of an idea into a prototype.
+            </p>
+            <p>
+              At the outset of a discussion on prototyping a new idea, the
+              developer submits two files:
+            </p>
+            <ul>
+              <li>
+                A
+                <a
+                  href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/project-prototype-definition-template.md"
+                  >Project Prototype Definition</a
+                >
+                (PDD)
+              </li>
+              <li>
+                A
+                <a
+                  href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/thread-schema.json"
+                  >thread schema</a
+                >
+              </li>
+            </ul>
+            <p>
+              Given a <abbr title="Project Prototype Definition">PDD</abbr>, the
+              developer and the LLM start their back-and-forth. When a
+              significant juncture is reached, the developer asks the LLM to
+              generate a thread extension which is a snapshot of progress to
+              date but which continues, or extends, the thread of the
+              discussion.
+            </p>
+            <p>
+              The snapshot is disposable and standalone but the developer has
+              the option to create a
+              <a
+                href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/thread-history-schema.json"
+                >thread history schema</a
+              >.
+            </p>
+            <p>
+              A single snapshot, or the entire thread history, are available to
+              instigate an interaction with another LLM or another developer.
+            </p>
+            <p>
+              Each snapshot also marks a pause in - or an end to - the
+              interaction, a moment for the developer to collect their thoughts,
+              review the decisions they have made, and consider the responses
+              they have received before moving on.
+            </p>
+          </section>
+          <section aria-labelledby="critical-thinking">
+            <h3 id="critical-thinking">Critical thinking</h3>
+            <p>
+              There is debate as to whether LLMs
+              <a
+                href="https://www.researchgate.net/publication/385743952_The_Risks_Of_Human_Overreliance_On_Large_Language_Models_For_Critical_Thinking"
+              >
+                promote or hinder critical thinking
+              </a>
+              and human
+              <a href="https://arxiv.org/abs/2410.03703">creativity</a>.
+            </p>
+            <p>
+              In his paper
+              <a
+                href="https://journals.sagepub.com/doi/10.1177/02734753241305980"
+                >Generative AI’s Impact on Critical Thinking: Revisiting Bloom’s
+                Taxonomy</a
+              >
+              Chahna Gonsalves frames a study of MSc Marketing students using a
+              modified version
+              <a href="https://en.wikipedia.org/wiki/Bloom's_taxonomy"
+                >Bloom's Taxonomy</a
+              >
+              (a framework for categorizing educational goals) to assess their
+              use of LLMs during assignments.
+            </p>
+            <p>In the discussion, Gonsalves warns</p>
+            <blockquote>
+              <p>
+                Although AI can promote critical thinking, it can also undermine
+                autonomous cognitive development if students bypass deeper
+                engagement, highlighting the importance of fostering critical
+                engagement strategies in AI-driven education.
+              </p>
+            </blockquote>
+            <p>
+              LLMs are tools. Use them wisely. Don't become dependent, and
+              remember
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11530614/"
+                >they come at a cost</a
+              >
+              we may not be able to afford.
+            </p>
+          </section>
+          <section aria-labelledby="Conclusion">
+            <h2 id="Conclusion">Conclusion</h2>
+            <p>
+              There are short-term benefits from using LLMs but it remains true
+              that developers, and others, put at risk their ability to think
+              critically and creatively when they cede control and direction of
+              their projects and ideas to LLMs.
+            </p>
+            <p>
+              LLMs are at their best when we concentrate on the questions we ask
+              ourselves. Ariadne's Thread is designed to focus on these human
+              prompts, and the oversight we need when interacting with LLMs.
+            </p>
+            <p>
+              LLMs are design grid lines or guides; helpful tools that can be
+              removed when the work is done.
+            </p>
+          </section>
+        </section>
+      </article>
+      <aside aria-labelledby="authors-heading">
+        <h3 id="authors-heading">Authors</h3>
+        <p>
+          <em>
+            This article was not written with the help of an LLM but Claude,
+            ChatGPT and DeepSeek were involved at various times during the
+            development of Ariadne's Thread.
+          </em>
+        </p>
+      </aside>
+      <hr />
+      <p>
+        <em>This article was published on 19th February 2025.</em>
+      </p>
+      <hr />
+      <section aria-labelledby="thread-history-schema">
+        <h2 id="thread-history-schema">Terms</h2>
+        <dl>
+          <dt><strong>Thread</strong></dt>
+          <dd>
+            The thread serves as a breadcrumb trail through the development
+            process, allowing both human developers and LLMs to retain context
+            and coherence across multiple interactions. The developer maintains
+            a record of the thread in a thread history.
+          </dd>
+          <dt><strong>Thread extension</strong></dt>
+          <dd>
+            Each addition to the thread. An extension can be thought of as a
+            snapshot - a specific interaction state representative of progress
+            to date.
+          </dd>
+          <dt><strong>Prompt thread</strong></dt>
+          <dd>
+            A prompt that has been designated a thread by passing in a
+            <abbr title="Project Prototype Definition">PPD</abbr>.
+          </dd>
+        </dl>
+      </section>
+      <hr />
+      <section aria-labelledby="reference">
+        <h2 id="reference">Reference</h2>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Ariadne">Ariadne</a></li>
+          <li>
+            <a href="https://github.com/p-n-c/ariadnes-thread/tree/main"
+              >Ariadne's Thread</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/prototype-types.json"
+              >Prototype types</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.researchgate.net/publication/385743952_The_Risks_Of_Human_Overreliance_On_Large_Language_Models_For_Critical_Thinking"
+              >The Risks Of Human Overreliance On Large Language Models For
+              Critical Thinking by Duenas and Ruiz</a
+            >
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/2410.03703"
+              >Human Creativity in the Age of LLMs by Kumar et al.</a
+            >
+          </li>
+          <li>
+            <a href="https://journals.sagepub.com/doi/10.1177/02734753241305980"
+              >Generative AI’s Impact on Critical Thinking: Revisiting Bloom’s
+              Taxonomy by Chahna Gonsalves</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://steve-yegge.medium.com/the-death-of-the-stubborn-developer-b5e8f78d326b"
+              >The Death of the Stubborn Developer by Steve Yegge</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer id="footer">
+      <nav aria-label="Primary">
+        <a href="/src/index.html">Home</a>
+        <a href="/src/people.html">People</a>
+        <a href="/src/code.html">Code</a>
+        <a href="/src/writing.html">Writing</a>
+        <a href="https://workshops.people-and-code.com">Workshops</a>
+      </nav>
+      <div class="copyright">
+        &copy; 2025 People and Code. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
