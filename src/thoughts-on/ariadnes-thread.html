@@ -33,228 +33,180 @@
       <article>
         <p>It's easy to get lost during an extended chat with an LLM.</p>
         <p>
-          As the interaction metastasises, the developer becomes disoriented.
-          This is frustrating and wasteful of time, effort and resources.
+          As the interaction spirals out in different directions, we become
+          disoriented. This is frustrating and wasteful of time, effort and
+          resources.
         </p>
         <p>
-          One approach is to increase the context window thereby enabling a
-          richer and more specific experience or use multiple LLMs, or both.
+          One response is to augment the LLM by increasing its context window.
         </p>
         <p>
-          There is another, less impactful way. More important than the prompts
-          the developer puts to the LLM, are the human prompts they direct
-          towards themselves.
+          The alternative is to bolster the human. We can do this by structuring
+          and documenting human-LLM interactions.
+        </p>
+        <p>
+          We have chosen the metaphor of Ariadne's Thread to describe our
+          approach to solving this problem. Ariadne handed the Greek hero
+          Theseus a ball of thread before he entered the labyrinth at Knossos so
+          that he could retrace his steps after confronting, and killing, the
+          Minotaur.
         </p>
         <section aria-labelledby="labyrinth">
           <h2 id="labyrinth">Escaping the labyrinth</h2>
           <p>
-            There is no evidence of spontaneous intelligence in LLMs. The
-            developer is solely responsible for what happens, and makes all of
-            the decisions. There is therefore an extreme asymmetry between the
-            human and the LLM when they work together.
+            A <strong>thread</strong> is a collection of snapshots, or
+            representations, of a chat. It summarises decisions, ideas,
+            requirements, dependencies, risks, etc. up to that point.
           </p>
           <p>
-            If the developer is director, writer and conductor, they must know
-            what's going on; they need a goal or a plan, a way to oversee what
-            is happening, and a means of getting back on track when the
-            discussion deviates.
+            It is both a summary of exploratory design steps and a way to track
+            changes.
           </p>
-          <section aria-labelledby="convergent-divergent">
-            <h3 id="convergent-divergent">Convergent / divergent thinking</h3>
-            <p>
-              The interactions described here relate in the main to convergent
-              thinking (refining ideas) which is generally more goal-oriented
-              and structured.
-            </p>
-            <p>
-              When it comes to divergent thinking (creation of novel ideas), the
-              developer is advised to be sceptical of LLM responses and to not
-              become attached to their outpourings.
-            </p>
-            <p>Whatever the task, use LLMs sparingly.</p>
-            <blockquote cite="https://arxiv.org/abs/2410.03703">
-              <p>
-                While LLMs may provide short-term boosts in creativity during
-                assisted tasks, they might inadvertently hinder independent
-                creative performance when users are asked to perform without
-                assistance. This raises important questions about the long-term
-                impact of repeated LLM use on human creativity and cognition.
-              </p>
-            </blockquote>
-            <cite
-              ><a href="https://arxiv.org/abs/2410.03703"
-                >Human Creativity in the Age of LLMs by Kumar et al.</a
-              ></cite
+          <p>It allows us to explore the labyrinth without getting lost.</p>
+          <p>
+            By way of example, we have created developer inputs and LLM outputs
+            suitable for iterating over designs for a new project via
+            <strong>prototypes</strong>
+            (conceptual, vertical, functional, etc.).
+          </p>
+          <h3>Turning our design chat into a prompt thread</h3>
+          <p>
+            To turn a chat into a prompt thread we pass in a
+            <strong>thread definition</strong>
+            (what we want to do, and how we want to do it).
+          </p>
+
+          <p>
+            Our
+            <a
+              href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/prompt-thread-template.md"
+              >default template</a
             >
-          </section>
-          <section aria-labelledby="ariadnes-thread">
-            <h3 id="ariadnes-thread">Ariadne's Thread</h3>
+            is for a <em>prototype thread</em>. It has two parts:
+          </p>
+          <ul>
+            <li>
+              <em>Prompt thread definition:-</em> properties specific to a
+              prototype thread
+              <ul>
+                <li>Title, description, definition, prototype type, etc.</li>
+              </ul>
+            </li>
+            <li>
+              <em>LLM instructions:-</em> common to all threads
+              <ul>
+                <li>Interaction guidelines</li>
+                <li>Terms</li>
+                <li>
+                  <a
+                    href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/snapshot-schema.json"
+                    >Snapshot schema</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            A <strong>snapshot</strong> is a summary of the chat to date. It is
+            what an LLM returns to us.
+          </p>
+          <p>A collection of snapshots is a <strong>prompt thread</strong>.</p>
+          <aside>
             <p>
-              <a href="https://github.com/p-n-c/ariadnes-thread"
-                >Ariadne's Thread</a
+              The project
+              <a
+                href="https://github.com/p-n-c/ariadnes-thread/blob/main/README.md"
+                >README</a
               >
-              fulfills the need for distance, autonomy and discipline.
+              has a complete guide to creating a prompt thread plus tips and
+              best practices.
             </p>
+          </aside>
+          <section aria-labelledby="workflow">
+            <h3 id="workflow">Prompt thread workflow</h3>
             <p>
-              It is a consistent, informal approach to structuring and
-              documenting interactions.
+              A thread definition prompts us to consider what we want to gain
+              from a chat.
             </p>
+
             <p>
-              Specifically, the developer considers in detail what they are
-              trying to achieve before deciding how to proceed. The thread will
-              lead them to safety.
+              At any point during the chat, we can ask the LLM to generate a
+              snapshot. Do this when you detect a discernible shift in thinking
+              or approach, or when you want to review what you have done.
             </p>
-          </section>
-          <section aria-labelledby="prompt-thread">
-            <h3 id="prompt-thread">Setting up a prompt thread</h3>
-            <p>
-              A prompt thread mediates the interactions between a developer and
-              an LLM during the conversion of an idea into a prototype.
-            </p>
-            <p>
-              In order to create a prompt thread, the developer submits two
-              files:
-            </p>
+            <p>Snapshots have several functions:</p>
             <ul>
+              <li>Capture progress (decisions made, etc.)</li>
               <li>
-                A
-                <a
-                  href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/project-prototype-definition-template.md"
-                  >Project Prototype Definition</a
-                >
-                (PDD)
+                Allow us to step back and review progress while we consider what
+                to do next
               </li>
-              <li>
-                A
-                <a
-                  href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/thread-schema.json"
-                  >thread schema</a
-                >
-              </li>
+              <li>Collectively act as a record of a chat (a thread)</li>
+              <li>Break down unwieldy chats into manageable parts</li>
+              <li>Encourage us to penetrate further into the labyrinth</li>
             </ul>
-            <p>
-              The developer and the LLM can now begin their back-and-forth. When
-              a significant juncture is reached, the developer asks the LLM to
-              generate a thread extension which is a snapshot of progress to
-              date but which also continues, or extends, the thread of the
-              discussion.
-            </p>
-            <p>
-              The snapshot is disposable and standalone but the developer has
-              the option to create a
-              <a
-                href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/thread-history-schema.json"
-                >thread history</a
-              >.
-            </p>
-            <section aria-labelledby="thread-history">
-              <h3 id="thread-history">Thread history - a chain of reasoning</h3>
-            </section>
-            <p>
-              A single snapshot, or the entire thread history, are available to
-              instigate an interaction with another LLM or another developer.
-            </p>
-            <p>
-              For example, the developer passes the final snapshot from a
-              concept prototype into a new prompt thread for a horizontal
-              prototype. The final snapshot from this exercise is passed to a
-              designer, whose input informs the prompt thread for a functional
-              prototype, and so on.
-            </p>
-            <p>
-              Each snapshot also marks a pause in - or an end to - the
-              interaction, a moment for the developer to collect their thoughts,
-              review the decisions they have made, and consider the responses
-              they have received before moving on.
-            </p>
-          </section>
-          <section aria-labelledby="critical-thinking">
-            <h3 id="critical-thinking">Critical thinking</h3>
-            <p>
-              There is debate as to whether LLMs
-              <a
-                href="https://www.researchgate.net/publication/385743952_The_Risks_Of_Human_Overreliance_On_Large_Language_Models_For_Critical_Thinking"
-              >
-                promote or hinder critical thinking
-              </a>
-              and human
-              <a href="https://arxiv.org/abs/2410.03703">creativity</a>.
-            </p>
-            <p>
-              In her paper
-              <a
-                href="https://journals.sagepub.com/doi/10.1177/02734753241305980"
-                >Generative AI’s Impact on Critical Thinking: Revisiting Bloom’s
-                Taxonomy</a
-              >
-              Chahna Gonsalves frames a study of MSc Marketing students using a
-              modified version
-              <a href="https://en.wikipedia.org/wiki/Bloom's_taxonomy"
-                >Bloom's Taxonomy</a
-              >
-              (a framework for categorising educational goals) to assess their
-              use of LLMs during assignments.
-            </p>
-            <p>In the discussion, Gonsalves warns</p>
-            <blockquote
-              cite="https://journals.sagepub.com/doi/10.1177/02734753241305980"
-            >
-              <p>
-                Although AI can promote critical thinking, it can also undermine
-                autonomous cognitive development if students bypass deeper
-                engagement, highlighting the importance of fostering critical
-                engagement strategies in AI-driven education.
-              </p>
-            </blockquote>
-            <cite>
-              <a
-                href="https://journals.sagepub.com/doi/10.1177/02734753241305980"
-                >Generative AI’s Impact on Critical Thinking: Revisiting Bloom’s
-                Taxonomy by Chahna Gonsalves</a
-              ></cite
-            >
-            <p>
-              LLMs are tools. Use them wisely. Don't become dependent, and
-              remember
-              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11530614/"
-                >they come at a cost</a
-              >
-              we may not be able to afford.
-            </p>
           </section>
           <section aria-labelledby="Conclusion">
             <h2 id="Conclusion">Conclusion</h2>
             <p>
-              There are short-term benefits from using LLMs but it remains true
-              that developers, and others, put at risk their ability to think
-              critically and creatively when they cede control and direction of
-              their projects and ideas to LLMs.
+              LLMs are excellent at small, discrete tasks. They are typically
+              reliable at convergent thinking (refining ideas) and with a little
+              oversight can help speed things along.
             </p>
             <p>
-              LLMs are at their best when we concentrate on the questions we ask
-              ourselves. Ariadne's Thread is designed to focus on these human
-              prompts, and the oversight we need when interacting with LLMs.
+              They also expand our ambitions by plugging gaps (handling
+              unfamiliar languages or APIs) and doing heavy lifting (writing
+              tests, generating diagrams).
             </p>
             <p>
-              LLMs are design grid lines or guides; helpful tools that can be
-              removed when the work is done.
+              They are endlessly patient but they are not cheap. Their cost
+              will, at best, be deferred and it will be paid in finite resources
+              such as water, pollution and emissions as well as money.
             </p>
-            <p>
-              The question we ask ourselves is not can I do more, but I can I do
-              more of what is interesting or novel.
-            </p>
-            <blockquote cite="https://arxiv.org/abs/2410.03703">
+            <section aria-labelledby="ariadnes-thread">
+              <h3 id="ariadnes-thread">Ariadne's Thread</h3>
               <p>
-                Generative AI can unlock unprecedented creative growth and
-                learning, allowing users to expand their cognitive horizons and
-                engage in innovative forms of thought.
+                Ariadne's Thread emerged from two different but complementary
+                wishes.
               </p>
-            </blockquote>
-            <cite
-              ><a href="https://arxiv.org/abs/2410.03703"
-                >Human Creativity in the Age of LLMs by Kumar et al.</a
-              ></cite
-            >
+              <ul>
+                <li>To be independent of LLMs (because of their cost)</li>
+                <li>
+                  To know where our chats are taking us (so as to not get lost)
+                </li>
+              </ul>
+            </section>
+            <section aria-labelledby="dependency-avoidance">
+              <h4 id="dependency-avoidance">Dependency avoidance</h4>
+              <p>
+                We use LLMs (quite a lot) but we are not reliant on them. Where
+                possible we create something new from our interactions,
+                something which does not require their continued presence. We
+                think LLMs are valuable but not indispensable.
+              </p>
+              <p>
+                The work on Ariadne's Thread is itself an example of this
+                principle in practice; we worked with three LLMs to test its
+                viability but we haven't made the solution dependent on having
+                access to an LLM.
+              </p>
+            </section>
+            <section aria-labelledby="critical-thinking">
+              <h4 id="critical-thinking">Critical thinking</h4>
+              <p>
+                LLMs are less good at divergent thinking (creation of novel
+                ideas) than they are at convergent thinking but they can still
+                be of help.
+              </p>
+              <p>
+                Transforming a chat into a loosely structured prompt thread
+                means we can be more ambitious in our thinking.
+              </p>
+              <p>
+                But in order not to perish in the labyrinth, we must first take
+                hold of the thread of our reasoning, and hold to it fast.
+              </p>
+            </section>
           </section>
         </section>
       </article>
@@ -270,7 +222,7 @@
       </aside>
       <hr />
       <p>
-        <em>This article was published on 19th February 2025.</em>
+        <em>This article was published on 21st February 2025.</em>
       </p>
       <hr />
       <section aria-labelledby="thread-history-schema">
@@ -283,16 +235,16 @@
             and coherence across multiple interactions. The developer maintains
             a record of the thread in a thread history.
           </dd>
-          <dt><strong>Thread extension</strong></dt>
+          <dt><strong>Snapshot</strong></dt>
           <dd>
-            Each addition to the thread. An extension can be thought of as a
-            snapshot - a specific interaction state representative of progress
-            to date.
+            Each addition to the thread. A specific interaction state
+            representative of progress to date.
           </dd>
           <dt><strong>Prompt thread</strong></dt>
           <dd>
-            A prompt that has been designated a thread by passing in a
-            <abbr title="Project Prototype Definition">PPD</abbr>.
+            A series of prompts connected by a thread. To convert a chat into a
+            prompt thread pass in a thread definition and/or a thread or
+            snapshot.
           </dd>
         </dl>
       </section>
