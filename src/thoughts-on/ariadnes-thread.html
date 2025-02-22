@@ -31,18 +31,21 @@
         </div>
       </div>
       <article>
-        <p>It's easy to get lost during an extended chat with an LLM.</p>
+        <p>It's easy to get lost during an extended interaction with an LLM.</p>
+
         <p>
-          As the interaction spirals out in different directions, we become
-          disoriented. This is frustrating and wasteful of time, effort and
-          resources.
+          We start out enthusiastically but after much scrabbling around and
+          changes of direction we reach a dead end surrounded by the skeletons
+          of unworkable solutions.
         </p>
         <p>
           One response is to augment the LLM by increasing its context window.
+          The alternative is to bolster the human.
         </p>
         <p>
-          The alternative is to bolster the human. We can do this by structuring
-          and documenting human-LLM interactions.
+          <strong>
+            We do this by structuring and documenting human-LLM interactions.
+          </strong>
         </p>
         <p>
           We have chosen the metaphor of Ariadne's Thread to describe our
@@ -51,101 +54,105 @@
           that he could retrace his steps after confronting, and killing, the
           Minotaur.
         </p>
+
         <section aria-labelledby="labyrinth">
           <h2 id="labyrinth">Escaping the labyrinth</h2>
           <p>
-            A <strong>thread</strong> is a collection of snapshots, or
-            representations, of a chat. It summarises decisions, ideas,
-            requirements, dependencies, risks, etc. up to that point.
+            Since we often create project prototypes, we're going to use the
+            creation of a concept prototype as an example of how to convert an
+            interaction into a thread.
           </p>
           <p>
-            It is both a summary of exploratory design steps and a way to track
-            changes.
+            We need to tell the LLM what we want to do and how to document
+            progress.
           </p>
-          <p>It allows us to explore the labyrinth without getting lost.</p>
           <p>
-            By way of example, we have created developer inputs and LLM outputs
-            suitable for iterating over designs for a new project via
-            <strong>prototypes</strong>
-            (conceptual, vertical, functional, etc.).
-          </p>
-          <h3>Turning our design chat into a prompt thread</h3>
-          <p>
-            To turn a chat into a prompt thread we pass in a
-            <strong>thread definition</strong>
-            (what we want to do, and how we want to do it).
-          </p>
-
-          <p>
-            Our
+            We have a
             <a
-              href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/prompt-thread-template.md"
-              >default template</a
+              href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/thread-template.md"
+              >thread template</a
             >
-            is for a <em>prototype thread</em>. It has two parts:
+            to help us. It consists of two parts:
           </p>
           <ul>
             <li>
-              <em>Prompt thread definition:-</em> properties specific to a
-              prototype thread
-              <ul>
-                <li>Title, description, definition, prototype type, etc.</li>
-              </ul>
+              <p><strong>Thread definition</strong></p>
+              <p>
+                This is where we put project specific items: the project title,
+                description, the prototype type, and details of what we want to
+                do.
+              </p>
             </li>
             <li>
-              <em>LLM instructions:-</em> common to all threads
-              <ul>
-                <li>Interaction guidelines</li>
-                <li>Terms</li>
-                <li>
-                  <a
-                    href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/snapshot-schema.json"
-                    >Snapshot schema</a
-                  >
-                </li>
-              </ul>
+              <p><strong>LLM instructions</strong></p>
+              <p>
+                This is where we put general instructions such as whether the
+                LLM should show code, ask questions when in doubt, and whether
+                to be succinct or verbose.
+              </p>
+              <p>
+                We also define how the LLM should summarise the interaction to
+                date. We call this a <strong>snapshot</strong>. In this case, we
+                provide a
+                <a
+                  href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/snapshot-schema.json"
+                  >snapshot schema</a
+                >
+                in JSON but it could be a markdown template or free text.
+              </p>
             </li>
           </ul>
           <p>
-            A <strong>snapshot</strong> is a summary of the chat to date. It is
-            what an LLM returns to us.
+            Once we have copied our markdown template and saved it, we can use
+            it to initialise our interaction by adding or uploading the file.
+            Our interaction is now a thread and we can start writing prompts.
           </p>
-          <p>A collection of snapshots is a <strong>prompt thread</strong>.</p>
+          <p>
+            At any point during the interaction, we can ask the LLM to generate
+            a snapshot. We do this when we detect a discernible shift in
+            thinking or approach, or when we want to review what we have done.
+            We add these snapshots to a
+            <strong>thread history</strong>.
+          </p>
+          <section aria-labelledby="workflow">
+            <h3 id="workflow">Thread workflow</h3>
+            <p>
+              See a
+              <a
+                href="https://github.com/p-n-c/ariadnes-thread/blob/main/WORKFLOW.md"
+                >state diagram</a
+              >
+              of a thread workflow.
+            </p>
+            <p>
+              In summary, we embellish or decorate an interaction by adding a
+              thread which defines what we want to do and what form the
+              interaction should take. The thread template also defines a
+              snapshot (the summary the LLM periodically generates at our
+              request).
+            </p>
+            <p>We can now:</p>
+            <ul>
+              <li>Capture progress (decisions made, etc.)</li>
+              <li>Ask for a summary of recent interactions</li>
+              <li>Go back in the thread to a previous snapshot</li>
+              <li>Review the interaction to date (thread history)</li>
+              <li>Break down unwieldy interactions into manageable parts</li>
+              <li>
+                Penetrate further into the labyrinth without fear of pitfalls
+              </li>
+            </ul>
+          </section>
           <aside>
             <p>
-              The project
+              See the Ariadne's Thread project repo
               <a
                 href="https://github.com/p-n-c/ariadnes-thread/blob/main/README.md"
                 >README</a
               >
-              has a complete guide to creating a prompt thread plus tips and
-              best practices.
+              for hints and tips.
             </p>
           </aside>
-          <section aria-labelledby="workflow">
-            <h3 id="workflow">Prompt thread workflow</h3>
-            <p>
-              A thread definition prompts us to consider what we want to gain
-              from a chat.
-            </p>
-
-            <p>
-              At any point during the chat, we can ask the LLM to generate a
-              snapshot. Do this when you detect a discernible shift in thinking
-              or approach, or when you want to review what you have done.
-            </p>
-            <p>Snapshots have several functions:</p>
-            <ul>
-              <li>Capture progress (decisions made, etc.)</li>
-              <li>
-                Allow us to step back and review progress while we consider what
-                to do next
-              </li>
-              <li>Collectively act as a record of a chat (a thread)</li>
-              <li>Break down unwieldy chats into manageable parts</li>
-              <li>Encourage us to penetrate further into the labyrinth</li>
-            </ul>
-          </section>
           <section aria-labelledby="Conclusion">
             <h2 id="Conclusion">Conclusion</h2>
             <p>
@@ -159,9 +166,9 @@
               tests, generating diagrams).
             </p>
             <p>
-              They are endlessly patient but they are not cheap. Their cost
-              will, at best, be deferred and it will be paid in finite resources
-              such as water, pollution and emissions as well as money.
+              They are endlessly patient but they are not cheap. Their cost is
+              paid in finite resources such as water, pollution and emissions as
+              well as money.
             </p>
             <section aria-labelledby="ariadnes-thread">
               <h3 id="ariadnes-thread">Ariadne's Thread</h3>
@@ -172,7 +179,8 @@
               <ul>
                 <li>To be independent of LLMs (because of their cost)</li>
                 <li>
-                  To know where our chats are taking us (so as to not get lost)
+                  To know where our interactions are taking us (so as to not get
+                  lost)
                 </li>
               </ul>
             </section>
@@ -194,17 +202,21 @@
             <section aria-labelledby="critical-thinking">
               <h4 id="critical-thinking">Critical thinking</h4>
               <p>
-                LLMs are less good at divergent thinking (creation of novel
-                ideas) than they are at convergent thinking but they can still
-                be of help.
+                Over the past couple of years we have adapted to using LLMs and
+                trained ourselves to write concise prompts that specify what we
+                want, what we don't want, and how LLMs should respond.
               </p>
               <p>
-                Transforming a chat into a loosely structured prompt thread
-                means we can be more ambitious in our thinking.
+                Converting an interaction into a thread extends this practice.
+                We proceed from prompt to prompt with a definite end in mind and
+                when forced to change direction or retrace our steps, we capture
+                both our prompts and their responses in a snapshot.
               </p>
               <p>
-                But in order not to perish in the labyrinth, we must first take
-                hold of the thread of our reasoning, and hold to it fast.
+                By putting more effort and thought into our interactions, we now
+                use LLMs less frequently and with better results. And there's
+                something more, we increasingly answer our own questions without
+                recourse to an LLM.
               </p>
             </section>
           </section>
@@ -215,14 +227,14 @@
         <p>
           <em>
             This article was not written with the help of an LLM but Claude,
-            ChatGPT and DeepSeek were involved at various times during the
-            development of Ariadne's Thread.
+            InteractionGPT and DeepSeek were involved at various times during
+            the development of Ariadne's Thread.
           </em>
         </p>
       </aside>
       <hr />
       <p>
-        <em>This article was published on 21st February 2025.</em>
+        <em>This article was published on 24th February 2025.</em>
       </p>
       <hr />
       <section aria-labelledby="thread-history-schema">
@@ -232,19 +244,17 @@
           <dd>
             The thread serves as a breadcrumb trail through the development
             process, allowing both human developers and LLMs to retain context
-            and coherence across multiple interactions. The developer maintains
-            a record of the thread in a thread history.
+            and coherence across multiple interactions.
           </dd>
           <dt><strong>Snapshot</strong></dt>
           <dd>
             Each addition to the thread. A specific interaction state
             representative of progress to date.
           </dd>
-          <dt><strong>Prompt thread</strong></dt>
+          <dt><strong>Thread history</strong></dt>
           <dd>
-            A series of prompts connected by a thread. To convert a chat into a
-            prompt thread pass in a thread definition and/or a thread or
-            snapshot.
+            Record of the thread. Contains the initial project definition and a
+            collection of snapshots.
           </dd>
         </dl>
       </section>
