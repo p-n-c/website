@@ -1,0 +1,102 @@
+name: Release Management
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_override:
+        description: 'Version override (leave empty for auto-increment)'
+        required: false
+        type: string
+  push:
+    branches:
+      - netlify-deploy
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: netlify-deploy
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+
+      - name: Get current version
+        id: current_version
+        run: |
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          echo "current_version=${CURRENT_VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Set version
+        id: version
+        run: |
+          if [ "${{ github.event.inputs.version_override }}" != "" ]; then
+            echo "new_version=${{ github.event.inputs.version_override }}" >> $GITHUB_OUTPUT
+          else
+            IFS='.' read -r major minor build <<< "${{ steps.current_version.outputs.current_version }}"
+            new_build=$((build + 1))
+            NEW_VERSION="${major}.${minor}.${new_build}"
+            echo "new_version=${NEW_VERSION}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update package.json
+        run: |
+          npm version ${{ steps.version.outputs.new_version }} --no-git-tag-version --force
+          npm install
+
+      - name: Inject version into HTML
+        run: |
+          VERSION=${{ steps.version.outputs.new_version }}
+          TIMESTAMP=$(date +%s%3N)
+          sed -i "s/<meta name=\"version\" content=\".*\" \/>/<meta name=\"version\" content=\"${VERSION}\" \/>/" ./src/index.html
+          sed -i "s/<meta name=\"timestamp\" content=\".*\" \/>/<meta name=\"timestamp\" content=\"${TIMESTAMP}\" \/>/" ./src/index.html
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add package.json package-lock.json ./src/index.html
+          git commit -m "Update version to ${{ steps.version.outputs.new_version }}"
+          git push origin netlify-deploy
+
+      - name: Create or Update Pull Request
+        run: |
+          # Check if PR exists
+          EXISTING_PR=$(gh pr list --head netlify-deploy --base main --json number --jq '.[0].number')
+
+          if [ -z "$EXISTING_PR" ]; then
+            # Create new PR
+            PR_URL=$(gh pr create \
+              --base main \
+              --head netlify-deploy \
+              --title "Backport version ${{ steps.version.outputs.new_version }} to main" \
+              --body "Automated PR to sync version changes from netlify-deploy to main")
+            
+            PR_NUMBER=$(echo $PR_URL | rev | cut -d'/' -f1 | rev)
+          else
+            PR_NUMBER=$EXISTING_PR
+          fi
+
+          echo "The PR number is $PR_NUMBER"
+
+          # Enable auto-merge, but pass if it fails
+          gh pr merge $PR_NUMBER --merge || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.version.outputs.new_version }}
+          name: Release v${{ steps.version.outputs.new_version }}
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
