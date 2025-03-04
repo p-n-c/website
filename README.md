@@ -54,3 +54,7 @@ This workflow contains the following steps:
 - Pushes these changes to `main` so that the trunk and deploy branch are in sync
 
 To see the full yml script, go to [release_management.yml](https://github.com/p-n-c/website/blob/main/.github/workflows/release_management.yml)
+
+## How to update the RSS feed
+
+In the CLI run `node generate-rss-feed.js`
