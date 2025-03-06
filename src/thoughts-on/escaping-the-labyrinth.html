@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="How to navigate an interaction with an LLM without getting lost"
+    />
+    <link rel="stylesheet" href="/src/styles/common.css" />
+    <title>Escaping the labyrinth</title>
+    <link rel="icon" type="image/x-icon" href="/src/media/favicon.ico" />
+  </head>
+  <body class="body">
+    <header>
+      <a href="#main" class="skip">Skip to main content</a>
+      <div>
+        <h1>Escaping the labyrinth</h1>
+      </div>
+    </header>
+    <main id="main" class="main">
+      <div class="byline">
+        <img
+          class="byline-logo"
+          src="/src/media/pac-logo.svg"
+          alt="People and code logo."
+        />
+        <div>
+          <div class="byline-brand">People and Code</div>
+          <div class="byline-tagline">At Your Disposal</div>
+        </div>
+      </div>
+      <p>
+        When working on projects with an LLM, I often became lost, unsure how to
+        proceed, and too far from my starting point to retrace my steps.
+      </p>
+      <p>
+        As I wondered what to do about this, I was reminded of the ball of
+        thread Ariadne gave to Theseus. I too needed a thread to guide me.
+      </p>
+      <aside>
+        <h2 id="ariadnes-thread">Ariadne's Thread</h2>
+        <p>
+          In Greek mythology, the Cretan princess, Ariadne handed Theseus a ball
+          of thread before he entered the labyrinth at Knossos so that that he
+          might find his way back to safety after confronting, and killing, the
+          Minotaur.
+        </p>
+      </aside>
+      <p>
+        I'm going to jump straight into the problem, how not to get lost when
+        interacting with an LLM. I'll use the example of creating a project
+        prototype because prototypes are sufficiently complex to require a bit
+        of back and forth between a developer and an LLM.
+      </p>
+      <p>
+        I'll describe each part of the problem, and it's solution, in turn. At
+        the end, we'll see how they fit together.
+      </p>
+      <section aria-labelledby="the-project">
+        <h3 id="the-project">The project</h3>
+        <p>We need to know what we're going to be talking about.</p>
+        <p>
+          LLMs like to attach names to things so I prefer to name my project
+          upfront. It also helps to give it a short description and a more
+          detailed definition. This will benefit me as much as the LLM.
+        </p>
+        <p>
+          <em
+            ><strong>Prompt template</strong>: Used to initialise a thread.
+            Contains project-specific details, rules on how an LLM should
+            interact and how it should format periodic summaries
+            (snapshots).</em
+          >
+        </p>
+        <p>
+          This is the kind of information that typically goes in the initial
+          prompt but I'm calling it a prompt
+          <em>template</em> because we will use its format repeatedly. In
+          addition to the project title, description and definition, I add a
+          prototype type and its definition. A conceptual prototype is different
+          than a vertical or functional prototype and this helps me sort out my
+          thinking before I set out.
+        </p>
+      </section>
+      <section aria-labelledby="the-thread">
+        <h3 id="the-thread">The thread</h3>
+        <p>
+          <em
+            ><strong>Thread</strong>: The record of an interaction between a
+            developer and an LLM. Contains the initial prompt template and a
+            collection of snapshots.</em
+          >
+        </p>
+        <p>
+          The thread is what is going to guide me and enable me to document my
+          interaction with an LLM, or LLMs.
+        </p>
+        <p>
+          My thread is written in JSON. It's a simply structured record of the
+          interaction. Here's a basic example:
+        </p>
+        <aside>
+          <section aria-labelledby="the-json-thread">
+            <h2 id="the-json-thread"><em>thread.json</em></h2>
+            <pre id="json-thread" class="json">
+              {        
+                thread: {
+                  promptTemplate: {
+                    project: {
+                      title: 'project title',
+                      description: 'project description',
+                      definition: 'project definition',
+                    },
+                    prototype: {
+                      type: 'prototype',
+                      definition: 'prototype definition',
+                    },
+                  },
+                },
+              }
+            </pre>
+          </section>
+        </aside>
+        <p>
+          I'm going to set some ground rules or guidelines for the LLM in my
+          prompt. By default I include an explicit direction: "The LLM should
+          follow these guidelines throughout". <strong>Rules</strong> govern
+          things like whether the LLM should show code by default.
+        </p>
+        <p>These are particularly effective for pacing the LLM's response:</p>
+        <ul>
+          <li><code>confirmBeforeAdvancing</code></li>
+          <li><code>explainOneConceptAtATime</code></li>
+        </ul>
+        <p>
+          They cause the LLM to break solutions down into steps and iterate over
+          them.
+        </p>
+        <p>
+          It's a good idea to remind the LLM of these rules as you go along and
+          you can override them at any time. (NB They are not prescriptive;
+          tailor them to your needs).
+        </p>
+        <p>
+          Here's my updated thread. The prompt template has been fleshed out,
+          and a new field, <strong>snapshots</strong>, added:
+        </p>
+        <aside>
+          <section aria-labelledby="the-json-thread-2">
+            <h2 id="the-json-thread-2">
+              <em>thread.json</em> (with rules, terms and snapshots)
+            </h2>
+            <pre id="json-thread-2" class="json">
+              {
+                thread: {
+                  promptTemplate: {
+                    project: {
+                      title: 'project title',
+                      description: 'project description',
+                      definition: 'project definition',
+                    },
+                    prototype: {
+                      type: 'prototype',
+                      definition: 'prototype definition',
+                    },
+                    interactionGuidelines: {
+                      description: 'The LLM should follow these guidelines throughout.',
+                      rules: {
+                        conciseByDefault: true,
+                        showCodeByDefault: false,
+                      },
+                      terms: {
+                        promptTemplate: {
+                          definition: 'Used to initialise a thread. Contains…',
+                        },
+                      },
+                    },
+                  },
+                  snapshots: [],
+                },
+              }
+            </pre>
+            <p>
+              Here is a
+              <a
+                href="https://github.com/p-n-c/project-prototype-generator/blob/main/lib/projects/basic/templates/artefacts/thread.json"
+                >complete thread</a
+              >
+              with a full set of rules and terms.
+            </p>
+          </section>
+        </aside>
+      </section>
+      <section aria-labelledby="the-snapshot">
+        <h3 id="the-snapshot">The snapshot</h3>
+        <p>
+          <em
+            ><strong>Snapshot</strong>: A specific interaction state
+            representative of progress to date. A snapshot should conform to the
+            snapshot schema.</em
+          >
+        </p>
+        <p>The snapshot is how I keep track of what's going on.</p>
+        <p>
+          Whenever I want a summary of the interaction to date, need to slow
+          things down, or want to record where I am before changing direction, I
+          ask the LLM for a snapshot.
+        </p>
+        <p>
+          I choose to keep a record of snapshots by copying and pasting them
+          into the snapshots array in my thread. You might store want to share
+          them with others or have LLM curate them.
+        </p>
+        <p>
+          The <strong>snapshot schema</strong> maintains consistency and it's
+          primarily for my benefit, not the LLM's. I've written it in a form
+          that I find easy to parse, but whether it's in yaml or markdown won't
+          make much difference to the LLM.
+        </p>
+        <aside>
+          <section aria-labelledby="json-snapshot-schema">
+            <h5 id="json-snapshot-schema">The snapshot schema</h5>
+            <pre id="json-snapshot" class="json">
+                {
+                  schema: {
+                    project: {
+                      title: 'string',
+                      description: 'string',
+                      definition: 'string',
+                    },
+                    prototype: {
+                      type: 'string',
+                      definition: 'string',
+                    },
+                    summary: 'string',
+                  },
+                }
+              </pre
+            >
+          </section>
+        </aside>
+      </section>
+      <p>
+        You'll notice the snapshot has a copy of the project and prototype
+        objects. This reminds the developer and the LLM of the purpose of the
+        chat.
+      </p>
+      <section aria-labelledby="artefacts">
+        <h3 id="artefacts">Artefacts</h3>
+        <p>
+          I now have a thread which contains my initial prompt, interaction
+          guidelines, and a snapshots array for tracking progress. Where should
+          I put it?
+        </p>
+        <p>
+          It makes sense to keep the thread in the project but separate from the
+          source code. I add the thread to a new directory,
+          <strong>artefacts</strong>, which is where I'll also put files used
+          during the interaction as well as code or designs generated by the
+          LLM.
+        </p>
+        <p>
+          I can now step away from the chat interface and look over the
+          interaction in my own time. It feels much calmer. I have time to
+          review code, research any dependencies introduced, and think about
+          what I want to do next. It also means I don't copy and paste directly
+          into my source code from the chat.
+        </p>
+        <aside>
+          <section aria-labelledby="the-artefacts-directory">
+            <h4 id="the-artefacts-directory">The artefacts directory</h4>
+            <pre class="json">
+                artefacts: 
+                  thread.json
+                  // uploaded files and examples
+                  // responses provided by the LLM
+                src: 
+                  // project code
+              </pre
+            >
+          </section>
+        </aside>
+      </section>
+      <section aria-labelledby="workflow">
+        <h3 id="workflow">Workflow</h3>
+        <aside>
+          <p>
+            The Ariadne's Thread repo has a visual representation of the
+            <a
+              href="https://github.com/p-n-c/ariadnes-thread/blob/main/WORKFLOW.md"
+              >workflow</a
+            >.
+          </p>
+        </aside>
+        <p>
+          How does this work in practice? Here's a step-by-step guide for
+          creating a thread for a small project or prototype:
+        </p>
+        <ul>
+          <li>Create a new project</li>
+          <li>Add an artefacts directory</li>
+          <li>
+            Create a new thread file in artefacts with prompt details,
+            interaction rules and how you want the LLM to write snapshots
+          </li>
+          <li>Open a new chat and upload the thread</li>
+          <li>
+            Add any files used during the interaction to artefacts, including
+            those generated by the LLM
+          </li>
+          <li>
+            When you need a summary of progress to date, ask for a snapshot and
+            add it to the snapshots array
+          </li>
+          <li>
+            Use the snapshots and LLM responses inside artefacts to think over
+            what you are doing before working on source code and away from the
+            distractions of a chat interface
+          </li>
+        </ul>
+        <section aria-labelledby="example">
+          <h4 id="example">
+            Example - Building a simple RSS feed generator with Claude
+          </h4>
+          <p>
+            I used Ariadne's Thread to create a simple RSS feed generator. In
+            the
+            <a
+              href="https://github.com/p-n-c/rss-feed-generator/tree/main/artefacts"
+              >artefacts</a
+            >
+            folder you will find a thread, an example of an RSS feed which I
+            added to the chat, and an rss-generator file with code from the LLM.
+            Because I had asked Claude to proceed incrementally, it returned
+            small chunks of code (numbered 1-4).
+          </p>
+        </section>
+      </section>
+      <section aria-labelledby="conclusion">
+        <h2 id="conclusion">Conclusion</h2>
+        <p>
+          In order not to get lost in the maze of dead-ends and wrong turns
+          caused by muddled thinking, I struck on the metaphor of the thread
+          which Ariadne gave to Theseus to help him navigate the labyrinth.
+        </p>
+        <p>
+          Creating a thread has the effect of making me think more carefully
+          before starting a new project. Its structure and documentation afford
+          me better oversight and - if I ask an LLM to assist me - the means to
+          moderate our interaction.
+        </p>
+        <aside>
+          <p>
+            The
+            <a href="https://github.com/p-n-c/project-prototype-generator"
+              >project prototype generator</a
+            >
+            expedites creating a prototype that supports Ariadne's Thread. When
+            you create a new prototype, the artefacts folder and a thread
+            complete with prompt template is included. A list of human prompts
+            will help you define your project.
+          </p>
+        </aside>
+      </section>
+      <hr />
+      <p>Author: <em>Daniel Hartley</em></p>
+      <p>
+        <em>This article was published on 6th March 2025.</em>
+      </p>
+      <hr />
+      <section aria-labelledby="thread-history-schema">
+        <h2 id="thread-history-schema">Terms</h2>
+        <dl>
+          <dt><strong>Thread</strong></dt>
+          <dd>
+            The record of an interaction between a developer and an LLM.
+            Contains the initial prompt template and a collection of snapshots.
+          </dd>
+          <dt><strong>Prompt template</strong></dt>
+          <dd>
+            Used to initialise a thread. Contains project-specific details,
+            rules on how an LLM should interact and how it should format
+            periodic summaries (snapshots).
+          </dd>
+          <dt><strong>Snapshot</strong></dt>
+          <dd>
+            A specific interaction state representative of progress to date. A
+            snapshot should conform to the snapshot schema.
+          </dd>
+        </dl>
+      </section>
+      <hr />
+      <section aria-labelledby="reference">
+        <h2 id="reference">Reference</h2>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Ariadne">Ariadne</a></li>
+          <li>
+            <a href="https://github.com/p-n-c/ariadnes-thread/tree/main"
+              >Ariadne's Thread</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/prototype-types.json"
+              >Prototype types</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.researchgate.net/publication/385743952_The_Risks_Of_Human_Overreliance_On_Large_Language_Models_For_Critical_Thinking"
+              >The Risks Of Human Overreliance On Large Language Models For
+              Critical Thinking by Duenas and Ruiz</a
+            >
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/2410.03703"
+              >Human Creativity in the Age of LLMs by Kumar et al.</a
+            >
+          </li>
+          <li>
+            <a href="https://journals.sagepub.com/doi/10.1177/02734753241305980"
+              >Generative AI’s Impact on Critical Thinking: Revisiting Bloom’s
+              Taxonomy by Chahna Gonsalves</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://steve-yegge.medium.com/the-death-of-the-stubborn-developer-b5e8f78d326b"
+              >The Death of the Stubborn Developer by Steve Yegge</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer id="footer">
+      <nav aria-label="Primary">
+        <a href="/src/index.html">Home</a>
+        <a href="/src/people.html">People</a>
+        <a href="/src/code.html">Code</a>
+        <a href="/src/writing.html">Writing</a>
+        <a href="https://workshops.people-and-code.com">Workshops</a>
+      </nav>
+      <div class="copyright">
+        &copy; 2025 People and Code. All rights reserved.
+      </div>
+    </footer>
+  </body>
+  <script>
+    {
+      const json = {
+        thread: {
+          promptTemplate: {
+            project: {
+              title: 'project title',
+              description: 'project description',
+              definition: 'project definition',
+            },
+            prototype: {
+              type: 'prototype',
+              definition: 'prototype definition',
+            },
+          },
+        },
+      }
+      document.getElementById('json-thread').innerHTML = JSON.stringify(
+        json,
+        undefined,
+        2
+      )
+      const json2 = {
+        thread: {
+          promptTemplate: {
+            project: {
+              title: 'project title',
+              description: 'project description',
+              definition: 'project definition',
+            },
+            prototype: {
+              type: 'prototype',
+              definition: 'prototype definition',
+            },
+            interactionGuidelines: {
+              description: 'The LLM should follow these guidelines throughout.',
+              rules: {
+                conciseByDefault: true,
+                showCodeByDefault: false,
+              },
+              terms: {
+                promptTemplate: {
+                  definition: 'Used to initialise a thread. Contains…',
+                },
+              },
+            },
+          },
+          snapshots: [],
+        },
+      }
+      document.getElementById('json-thread-2').innerHTML = JSON.stringify(
+        json2,
+        undefined,
+        2
+      )
+      const jsonSnapshot = {
+        schema: {
+          project: {
+            title: 'string',
+            description: 'string',
+            definition: 'string',
+          },
+          prototype: {
+            type: 'string',
+            definition: 'string',
+          },
+          summary: 'string',
+        },
+      }
+      document.getElementById('json-snapshot').innerHTML = JSON.stringify(
+        jsonSnapshot,
+        undefined,
+        2
+      )
+    }
+  </script>
+</html>

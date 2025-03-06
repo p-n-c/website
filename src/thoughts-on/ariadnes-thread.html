@@ -57,20 +57,58 @@
 
         <section aria-labelledby="labyrinth">
           <h2 id="labyrinth">Escaping the labyrinth</h2>
-          <p>
-            Since we often create project prototypes, we're going to use the
-            creation of a concept prototype as an example of how to convert an
-            interaction into a thread.
-          </p>
-          <p>
-            We need to tell the LLM what we want to do and how to document
-            progress.
-          </p>
+          <section aria-labelledby="what-we-want">
+            <h3 id="what-we-want">What we want</h3>
+            <p>
+              For the purpose of this discussion, we are going to focus on
+              creating a project prototype with the help of an LLM. We expect
+              this kind of interaction to generate quite a bit of back and forth
+              between the developer and the LLM.
+            </p>
+            <p></p>
+            <ul>
+              <li>
+                A place for the developer to think outside the interaction
+              </li>
+              <li>
+                A set of guidelines or rules for the LLM to follow during the
+                interaction
+              </li>
+              <li>A way to document the interaction</li>
+            </ul>
+          </section>
+          <section aria-labelledby="how-to-get-it">
+            <h3 id="how-to-get-it">How to get it</h3>
+            <p>
+              Since we are creating a project, we can create a space inside the
+              project to document the interaction. Our project outline and
+              interaction rules go there, a record of the interaction and any
+              supporting materials.
+            </p>
+            <p>
+              To see what this looks like in practice, take a look at the
+              <a
+                href="https://github.com/p-n-c/rss-feed-generator/blob/main/artefacts"
+                >artefacts directory</a
+              >
+              for a project prototype that became an npm package we use for
+              generating rss feeds.
+            </p>
+            <p>
+              We've created a tool to help us with this setup, the
+              <a href="https://github.com/p-n-c/project-prototype-generator">
+                project prototype generator </a
+              >. As part of your project setup, this tool will create a thread
+              with a prepopulated prompt template and an empty snapshots array.
+              All you have to do is fill in the project definition (and there
+              are human prompts to guide you).
+            </p>
+          </section>
           <p>
             We have a
             <a
-              href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/thread-template.md"
-              >thread template</a
+              href="https://github.com/p-n-c/ariadnes-thread/blob/main/ariadnes-thread/artefacts/thread.json"
+              >prompt template</a
             >
             to help us. It consists of two parts:
           </p>
@@ -103,9 +141,9 @@
             </li>
           </ul>
           <p>
-            Once we have copied our markdown template and saved it, we can use
-            it to initialise our interaction by adding or uploading the file.
-            Our interaction is now a thread and we can start writing prompts.
+            Once we have completed the prompt template, we use it to initialise
+            our interaction by adding or uploading the file. Our interaction is
+            now a thread and we can start writing prompts.
           </p>
           <p>
             At any point during the interaction, we can ask the LLM to generate
@@ -161,9 +199,9 @@
               oversight can help speed things along.
             </p>
             <p>
-              They also expand our ambitions by plugging gaps (handling
-              unfamiliar languages or APIs) and doing heavy lifting (writing
-              tests, generating diagrams).
+              They've helped me expand my ambitions by plugging gaps in my
+              knowledge (handling unfamiliar languages or APIs) and doing some
+              of the heavy lifting (writing tests, generating diagrams).
             </p>
             <p>
               They are endlessly patient but they are not cheap. Their cost is
@@ -179,43 +217,43 @@
               <ul>
                 <li>To be independent of LLMs (because of their cost)</li>
                 <li>
-                  To know where our interactions are taking us (so as to not get
-                  lost)
+                  To document interactions outside of the chat interface so as
+                  to avoid getting lost
                 </li>
               </ul>
             </section>
             <section aria-labelledby="dependency-avoidance">
               <h4 id="dependency-avoidance">Dependency avoidance</h4>
               <p>
-                We use LLMs (quite a lot) but we are not reliant on them. Where
-                possible we create something new from our interactions,
-                something which does not require their continued presence. We
+                I use LLMs (quite a lot) but I don't want to be reliant on them.
+                Where possible I create something new from my interactions,
+                something which does not require their continued presence. I
                 think LLMs are valuable but not indispensable.
               </p>
               <p>
                 The work on Ariadne's Thread is itself an example of this
-                principle in practice; we worked with three LLMs to test its
-                viability but we haven't made the solution dependent on having
-                access to an LLM.
+                principle in practice; I worked with three LLMs to test its
+                viability but the solution is not dependent on having access to
+                an LLM.
               </p>
             </section>
             <section aria-labelledby="critical-thinking">
               <h4 id="critical-thinking">Critical thinking</h4>
               <p>
-                Over the past couple of years we have adapted to using LLMs and
-                trained ourselves to write concise prompts that specify what we
-                want, what we don't want, and how LLMs should respond.
+                Over the past couple of years I've adapted to using LLMs and
+                trained myself to write concise prompts that specify what I
+                want, what I don't want, and how I want the LLM to respond.
               </p>
               <p>
-                Converting an interaction into a thread extends this practice.
-                We proceed from prompt to prompt with a definite end in mind and
-                when forced to change direction or retrace our steps, we capture
-                both our prompts and their responses in a snapshot.
+                Converting an interaction into a thread extends this practice. I
+                proceed from prompt to prompt with a definite end in mind and
+                when forced to change direction or retrace my steps, I capture
+                progress to date in a snapshot.
               </p>
               <p>
-                By putting more effort and thought into our interactions, we now
-                use LLMs less frequently and with better results. And there's
-                something more, we increasingly answer our own questions without
+                By putting more effort and thought into my interactions, I use
+                LLMs less frequently and with better results. And there's
+                something more, I increasingly answer my own questions without
                 recourse to an LLM.
               </p>
             </section>
@@ -242,19 +280,19 @@
         <dl>
           <dt><strong>Thread</strong></dt>
           <dd>
-            The thread serves as a breadcrumb trail through the development
-            process, allowing both human developers and LLMs to retain context
-            and coherence across multiple interactions.
+            The record of an interaction between a developer and an LLM.
+            Contains the initial prompt template and a collection of snapshots.
+          </dd>
+          <dt><strong>Prompt template</strong></dt>
+          <dd>
+            Used to initialise a thread. Contains project-specific details,
+            rules on how an LLM should interact and how it should format
+            periodic summaries (snapshots).
           </dd>
           <dt><strong>Snapshot</strong></dt>
           <dd>
-            Each addition to the thread. A specific interaction state
-            representative of progress to date.
-          </dd>
-          <dt><strong>Thread history</strong></dt>
-          <dd>
-            Record of the thread. Contains the initial project definition and a
-            collection of snapshots.
+            A specific interaction state representative of progress to date. A
+            snapshot should conform to the snapshot schema.
           </dd>
         </dl>
       </section>

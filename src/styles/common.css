@@ -11,11 +11,12 @@
   --h: 1vh;
   --max-width: 70ch; /* Actual Width roughly 10% more than value. */
   --radius: calc(var(--d));
-  --min-font-size: 0.875rem;
+  --min-font-size: 0.8rem;
+  --mid-font-size: 0.875rem;
   --max-font-size: 1.1rem;
   --logo-height: clamp(4rem, 12vw, 6rem);
   --footer-height: clamp(
-    calc(var(--min-font-size) * 4),
+    calc(var(--mid-font-size) * 4),
     11vw,
     calc(var(--max-font-size) * 4)
   );
@@ -200,6 +201,11 @@ pre {
   white-space: pre-line;
   background-color: var(--box-colour);
   padding: calc(var(--d) * 2);
+
+  &.json {
+    white-space: break-spaces;
+    font-size: var(--min-font-size);
+  }
 }
 
 dt,
