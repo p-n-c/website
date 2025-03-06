@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>People and Code, At Your Disposal</title>
+    <link>https://people-and-code.com/</link>
+    <description>Latest articles from People and Code</description>
+    <lastBuildDate>Thu, 06 Mar 2025 12:39:42 GMT</lastBuildDate>
+    <item>
+      <title>Code</title>
+      <link>https://people-and-code.com/code</link>
+      <description>The code behind People and Code</description>
+      <pubDate>Thu, 06 Mar 2025 12:37:34 GMT</pubDate>
+      <guid>https://people-and-code.com/code</guid>
+    </item>
+    <item>
+      <title>P&amp;C - Specialists in responsible web development.</title>
+      <link>https://people-and-code.com/index</link>
+      <description>Specialists in responsible web development - best practice and tools to monitor performance, accessibility, sustainability and security.</description>
+      <pubDate>Thu, 06 Mar 2025 12:37:34 GMT</pubDate>
+      <guid>https://people-and-code.com/index</guid>
+    </item>
+    <item>
+      <title>People</title>
+      <link>https://people-and-code.com/people</link>
+      <description>The people behind People and Code</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/people</guid>
+    </item>
+    <item>
+      <title>Contents</title>
+      <link>https://people-and-code.com/sitemap</link>
+      <description>Site contents for People and Code</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/sitemap</guid>
+    </item>
+    <item>
+      <title>Writing | People and Code</title>
+      <link>https://people-and-code.com/writing</link>
+      <description>People and Code Writing</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/writing</guid>
+    </item>
+    <item>
+      <title>Be more productive in VSCode</title>
+      <link>https://people-and-code.com/be-more-productive-in-vscode</link>
+      <description>VSCode Tips</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/be-more-productive-in-vscode</guid>
+    </item>
+    <item>
+      <title>How to break down monolithic apps</title>
+      <link>https://people-and-code.com/break-down-monolithic-apps</link>
+      <description>Break down monolithic apps into parts that serve a single purpose</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/break-down-monolithic-apps</guid>
+    </item>
+    <item>
+      <title>
+      How to Build a Chrome Extension to Track Web Page CO2 Emissions
+    </title>
+      <link>https://people-and-code.com/build-a-chrome-extension-to-track-web-page-co2-emissions</link>
+      <description>How-to guide to building a Chrome extension that tracks CO2 emissions from web pages.</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/build-a-chrome-extension-to-track-web-page-co2-emissions</guid>
+    </item>
+    <item>
+      <title>Build and distribute a Chrome extension</title>
+      <link>https://people-and-code.com/build-and-distribute-a-chrome-extension</link>
+      <description>How to build and distribute a Chrome extension</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/build-and-distribute-a-chrome-extension</guid>
+    </item>
+    <item>
+      <title>How to create a GitHub action</title>
+      <link>https://people-and-code.com/create-a-github-action</link>
+      <description>How to create a GitHub action using a workflow and a repository secret</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/create-a-github-action</guid>
+    </item>
+    <item>
+      <title>How to create a GitHub pull request template</title>
+      <link>https://people-and-code.com/create-a-github-pull-request-template</link>
+      <description>How to create a GitHub pull request template using a markdown file</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/create-a-github-pull-request-template</guid>
+    </item>
+    <item>
+      <title>How to create a repository secret in GitHub</title>
+      <link>https://people-and-code.com/create-a-github-repository-secret</link>
+      <description>How to create a repository secret for a personal access token in GitHub</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/create-a-github-repository-secret</guid>
+    </item>
+    <item>
+      <title>Create a VS Code snippet</title>
+      <link>https://people-and-code.com/create-a-snippet</link>
+      <description>How to create a VS Code snippet</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/create-a-snippet</guid>
+    </item>
+    <item>
+      <title>Publish using GitHub Pages</title>
+      <link>https://people-and-code.com/publish-to-github-pages</link>
+      <description>How to publish a website using GitHub Pages</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/publish-to-github-pages</guid>
+    </item>
+    <item>
+      <title>Review a Github pull request locally | People and Code</title>
+      <link>https://people-and-code.com/review-a-github-pull-request-locally</link>
+      <description>A comprehensive guide for reviewing GitHub pull requests locally</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/review-a-github-pull-request-locally</guid>
+    </item>
+    <item>
+      <title>How to use GitHub actions</title>
+      <link>https://people-and-code.com/use-github-actions</link>
+      <description>How to use GitHub actions</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/use-github-actions</guid>
+    </item>
+    <item>
+      <title>Pledge to think before using AI</title>
+      <link>https://people-and-code.com/think-before-using-ai</link>
+      <description>A collection of pledges made by the people at People and Code</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/think-before-using-ai</guid>
+    </item>
+    <item>
+      <title>The European Accessibility Act</title>
+      <link>https://people-and-code.com/eu-accessibility-act</link>
+      <description>Summary of the European Accessibility Act</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/eu-accessibility-act</guid>
+    </item>
+    <item>
+      <title>Summary of the European AI Act</title>
+      <link>https://people-and-code.com/eu-ai-act</link>
+      <description>Summary of the European AI Act for web development teams: compliance and preparation.</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/eu-ai-act</guid>
+    </item>
+    <item>
+      <title>An All-Purpose API</title>
+      <link>https://people-and-code.com/an-all-purpose-api</link>
+      <description>Thoughts on an All-Purpose API</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/an-all-purpose-api</guid>
+    </item>
+    <item>
+      <title>Thoughts on... Contract-based Web Design | People and Code</title>
+      <link>https://people-and-code.com/contract-based-web-design</link>
+      <description>Contract-base Web Design</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/contract-based-web-design</guid>
+    </item>
+    <item>
+      <title>The colleague in an adjoining room</title>
+      <link>https://people-and-code.com/the-colleague-in-an-adjoining-room</link>
+      <description>Thoughts on how people in teams work together in the face of change</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/the-colleague-in-an-adjoining-room</guid>
+    </item>
+    <item>
+      <title>The colleague with the Mona Lisa smile</title>
+      <link>https://people-and-code.com/the-colleague-with-the-mona-lisa-smile</link>
+      <description>Thoughts on how we work with LLMs from People and Code</description>
+      <pubDate>Thu, 06 Mar 2025 12:36:28 GMT</pubDate>
+      <guid>https://people-and-code.com/the-colleague-with-the-mona-lisa-smile</guid>
+    </item>
+  </channel>
+</rss>
