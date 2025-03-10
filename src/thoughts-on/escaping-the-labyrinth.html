@@ -50,8 +50,8 @@
         <h2 id="ariadnes-thread">Ariadne's Thread</h2>
         <p>
           In Greek mythology, the Cretan princess, Ariadne handed Theseus a ball
-          of thread before he entered the labyrinth at Knossos so that that he
-          might find his way back to safety after confronting, and killing, the
+          of thread before he entered the labyrinth at Knossos so that he might
+          find his way back to safety after confronting, and killing, the
           Minotaur.
         </p>
       </aside>
@@ -69,8 +69,11 @@
           have with LLMs.
         </p>
         <p>
-          My thread is a simply structured record written in JSON. Here's the
-          first part of it:
+          My thread is a simply structured record written in JSON. Here's part
+          of a thread I set up to explore how to build a
+          <a href="https://github.com/p-n-c/rss-feed-generator"
+            >simple RSS feed generator</a
+          >:
         </p>
         <aside>
           <section aria-labelledby="the-json-thread">
@@ -80,18 +83,29 @@
                 thread: {
                   threadPrompt: {
                     project: {
-                      title: 'project title',
-                      description: 'project description',
-                      definition: 'project definition',
+                      title: 'rss-basic',
+                      description: 'Simple RSS feed generator',
+                      definition: {
+                        goal: 'Create an RSS Feed from scratch.',
+                        requirements: '…',
+                        setup: ['Node.js + ECMAScript modules'],
+                      },
                     },
                     prototype: {
-                      type: 'prototype',
-                      definition: 'prototype definition',
+                      type: 'Functional',
+                      typeDefinition: 'Validates specific functional …',
                     },
                   },
                 },
               }
             </pre>
+            <p>
+              Here is the complete
+              <a
+                href="https://github.com/p-n-c/rss-feed-generator/blob/main/artefacts/thread.json"
+                >thread</a
+              >.
+            </p>
           </section>
         </aside>
         <section aria-labelledby="the-project">
@@ -113,7 +127,7 @@
             The project and prototype details go in the
             <strong>thread prompt</strong>. It will govern the entire
             interaction related to the project. In nature, it sits somewhere
-            between a one off prompt and a systems prompt.
+            between a one off prompt and a system prompt.
           </p>
           <p>
             <em
@@ -160,41 +174,59 @@
             </h2>
             <pre id="json-thread-2" class="json">
               {
-                thread: {
-                  threadPrompt: {
-                    project: {
-                      title: 'project title',
-                      description: 'project description',
-                      definition: 'project definition',
+                "project": "As before …",
+                "prototype": "As before …",
+                interactionGuidelines: {
+                  description: 'The LLM should follow these guidelines throughout.',
+                  rules: {
+                    conciseByDefault: true,
+                    showCodeByDefault: false,
+                    askQuestionsWhenInDoubt: true,
+                    explainThinking: true,
+                    identifyCommonPatterns: true,
+                    identifySolutions: true,
+                    identifyRisks: true,
+                    identifyValue: true,
+                    highlightTradeoffs: true,
+                    considerSustainability: true,
+                    considerAccessibility: true,
+                    generateSnapshotOnRequest: true,
+                    proceedMethodically: true,
+                    confirmBeforeAdvancing: true,
+                    explainOneConceptAtATime: true,
+                    confirmDependenciesBeforeAdding: true,
+                  },
+                  terms: {
+                    thread: {
+                      definition: 'The record of an interaction …',
+                      purpose: 'The thread serves as a breadcrumb trail …',
                     },
-                    prototype: {
-                      type: 'prototype',
-                      definition: 'prototype definition',
+                    threadPrompt: {
+                      definition: 'Used to initialise a thread …',
                     },
-                    interactionGuidelines: {
-                      description: 'The LLM should follow these guidelines throughout.',
-                      rules: {
-                        conciseByDefault: true,
-                        showCodeByDefault: false,
-                      },
-                      terms: {
-                        threadPrompt: {
-                          definition: 'Used to initialise a thread. Contains…',
+                    snapshot: {
+                      definition: 'A specific interaction state …',
+                      schema: {
+                        project: {
+                          title: 'string',
+                          description: 'string',
+                          definition: 'string',
                         },
+                        prototype: { type: 'string', definition: 'string' },
+                        summary: 'string',
                       },
                     },
                   },
-                  snapshots: [],
                 },
+                snapshots: [],
               }
             </pre>
             <p>
-              Here's a
+              Once again, here is the complete
               <a
-                href="https://github.com/p-n-c/project-prototype-generator/blob/main/lib/projects/basic/templates/artefacts/thread.json"
-                >complete thread</a
-              >
-              with a full set of rules and terms.
+                href="https://github.com/p-n-c/rss-feed-generator/blob/main/artefacts/thread.json"
+                >thread</a
+              >.
             </p>
           </section>
         </aside>
@@ -318,7 +350,7 @@
         </ul>
         <aside>
           <p>
-            The Ariadne's Thread repo has a visual representation of the
+            The Ariadne's Thread repo has a visual representation of this
             <a
               href="https://github.com/p-n-c/ariadnes-thread/blob/main/WORKFLOW.md"
               >workflow</a
@@ -338,9 +370,14 @@
             >
             folder you will find a thread, an example of an RSS feed which I
             added to the chat, and an rss-generator file with code from the LLM.
-            Because I had asked Claude to proceed incrementally, it returned
-            small chunks of code (numbered 1-4) which I evaluated and refactored
+            Because I'd asked Claude to proceed incrementally, it returned small
+            numbered chunks of code (1-4) which I evaluated and refactored
             before using in the source code.
+          </p>
+          <p>
+            Notice that inside the project definition I added requirements and
+            setup fields. Specifying how I want modules to be imported is a
+            simple way to avoid incompatible code and frustration.
           </p>
         </section>
       </section>
@@ -368,12 +405,20 @@
             complete with thread prompt is included. A list of human prompts
             will help you define your project.
           </p>
+          <p>
+            Once you've done this, open a new chat, upload your thread, and
+            follow the
+            <a
+              href="https://github.com/p-n-c/ariadnes-thread/blob/main/WORKFLOW.md"
+              >workflow</a
+            >.
+          </p>
         </aside>
       </section>
       <hr />
       <p>Author: <em>Daniel Hartley</em></p>
       <p>
-        <em>This article was published on 6th March 2025.</em>
+        <em>This article was published on 10th March 2025.</em>
       </p>
       <hr />
       <section aria-labelledby="thread-history-schema">
@@ -440,12 +485,13 @@
           </li>
         </ul>
       </section>
+      <hr />
       <section aria-labelledby="potential-improvements">
         <h2 id="potential-improvements">Potential improvements</h2>
         <p>
           I asked Claude to suggest potential improvements. It touched on many
-          of the ideas we have discussed at People and Code, and that my
-          colleague, JP, has raised.
+          ideas we've discussed on this topic, and issues that my colleague, JP,
+          has raised.
         </p>
         <blockquote>
           <p>
@@ -537,13 +583,17 @@
         thread: {
           threadPrompt: {
             project: {
-              title: 'project title',
-              description: 'project description',
-              definition: 'project definition',
+              title: 'rss-basic',
+              description: 'Simple RSS feed generator',
+              definition: {
+                goal: 'Create an RSS Feed from scratch.',
+                requirements: '…',
+                setup: ['Node.js + ECMAScript modules'],
+              },
             },
             prototype: {
-              type: 'prototype',
-              definition: 'prototype definition',
+              type: 'Functional',
+              typeDefinition: 'Validates specific functional …',
             },
           },
         },
@@ -551,29 +601,50 @@
       document.getElementById('json-thread').innerHTML = JSON.stringify(
         json,
         undefined,
-        2
+        1
       )
       const json2 = {
         thread: {
-          threadPrompt: {
-            project: {
-              title: 'project title',
-              description: 'project description',
-              definition: 'project definition',
+          project: 'As before …',
+          prototype: 'As before …',
+          interactionGuidelines: {
+            description: 'The LLM should follow these guidelines throughout.',
+            rules: {
+              conciseByDefault: true,
+              showCodeByDefault: false,
+              askQuestionsWhenInDoubt: true,
+              explainThinking: true,
+              identifyCommonPatterns: true,
+              identifySolutions: true,
+              identifyRisks: true,
+              identifyValue: true,
+              highlightTradeoffs: true,
+              considerSustainability: true,
+              considerAccessibility: true,
+              generateSnapshotOnRequest: true,
+              proceedMethodically: true,
+              confirmBeforeAdvancing: true,
+              explainOneConceptAtATime: true,
+              confirmDependenciesBeforeAdding: true,
             },
-            prototype: {
-              type: 'prototype',
-              definition: 'prototype definition',
-            },
-            interactionGuidelines: {
-              description: 'The LLM should follow these guidelines throughout.',
-              rules: {
-                conciseByDefault: true,
-                showCodeByDefault: false,
+            terms: {
+              thread: {
+                definition: 'The record of an interaction …',
+                purpose: 'The thread serves as a breadcrumb trail …',
               },
-              terms: {
-                threadPrompt: {
-                  definition: 'Used to initialise a thread. Contains…',
+              threadPrompt: {
+                definition: 'Used to initialise a thread …',
+              },
+              snapshot: {
+                definition: 'A specific interaction state …',
+                schema: {
+                  project: {
+                    title: 'string',
+                    description: 'string',
+                    definition: 'string',
+                  },
+                  prototype: { type: 'string', definition: 'string' },
+                  summary: 'string',
                 },
               },
             },
