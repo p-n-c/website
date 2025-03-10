@@ -16,7 +16,8 @@
     "tests": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "source": [
-    "./src/index.html"
+    "./src/index.html",
+    "./src/thoughts-on/escaping-the-labyrinth.html"
   ],
   "keywords": [
     "performance",

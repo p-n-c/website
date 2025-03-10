@@ -11,11 +11,12 @@
   --h: 1vh;
   --max-width: 70ch; /* Actual Width roughly 10% more than value. */
   --radius: calc(var(--d));
-  --min-font-size: 0.875rem;
+  --min-font-size: 0.8rem;
+  --mid-font-size: 0.875rem;
   --max-font-size: 1.1rem;
   --logo-height: clamp(4rem, 12vw, 6rem);
   --footer-height: clamp(
-    calc(var(--min-font-size) * 4),
+    calc(var(--mid-font-size) * 4),
     11vw,
     calc(var(--max-font-size) * 4)
   );
@@ -25,6 +26,10 @@
 }
 
 /* Base */
+:is(*):not(h1, h2, h3, h4, h5, h6, footer, nav, header) {
+  font-size: var(--max-font-size);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -196,6 +201,56 @@ pre {
   white-space: pre-line;
   background-color: var(--box-colour);
   padding: calc(var(--d) * 2);
+
+  &.json {
+    white-space: break-spaces;
+    font-size: var(--min-font-size);
+  }
+}
+
+dt,
+dd {
+  font-size: calc(var(--d) * 4);
+  line-height: 1.6;
+
+  a {
+    font-size: calc(var(--d) * 4);
+    line-height: 1.6;
+  }
+}
+
+dt {
+  font-weight: 700;
+}
+
+blockquote {
+  * {
+    font-size: calc(var(--d) * 4);
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--fg-colour);
+    text-underline-offset: calc(var(--d) * 1.8);
+    text-decoration: underline;
+  }
+}
+
+aside {
+  padding: calc(var(--d) * 2) calc(var(--d) * 4);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--radius);
+  margin: calc(var(--d) * 4) 0;
+  line-height: 1.7;
+
+  & h3 {
+    margin-top: var(--d);
+    margin-bottom: 0;
+  }
+
+  & * {
+    font-size: calc(var(--d) * 4);
+  }
 }
 
 /* Classes */
@@ -341,11 +396,6 @@ pre {
 /* IDs */
 #writing {
   scroll-margin-top: var(--header-height);
-}
-
-/* Overrides */
-:is(*):not(h1, h2, h3, h4, h5, h6, footer, nav, header) {
-  font-size: var(--max-font-size);
 }
 
 cite *,
