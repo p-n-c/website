@@ -1,4 +1,0 @@
-{
-  "displayName": "unit",
-  "testMatch": ["**/src/**/*.test.js"]
-}
