@@ -1,5 +1,8 @@
 User-agent: *
 Disallow:
 
-# Add Sitemap URL e.g.
-# Sitemap: https://www.example.com/sitemap_index.xml
+# The sitemap
+# Sitemap: https://www.people-and-code/sitemap.xml
+
+# The RSS feed
+Sitemap: https://www.people-and-code/feed.rss
