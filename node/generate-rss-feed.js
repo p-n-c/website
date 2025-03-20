@@ -1,9 +1,10 @@
 import path from 'path'
 const __dirname = import.meta.dirname
+import { generateArticlePublishedDateTimestamps } from './generate-article-published-date-timestamps.js'
 
 import { rssFeeder } from '@p-n-c/rssfeed'
 
-const src = path.join(__dirname, 'src')
+const src = path.join(__dirname, '..', 'src')
 const root = 'src'
 const feed = {
   title: 'People and Code, At Your Disposal',
@@ -13,9 +14,14 @@ const feed = {
 }
 const options = {
   images: {
-    main: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Beardsley-peacockskirt.PNG/430px-Beardsley-peacockskirt.PNG',
+    main: 'https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg',
   },
   pathsToExclude: ['/'],
 }
+
+// Define the folders to process
+const folders = ['src/how-to', 'src/summary-of', 'src/thoughts-on']
+
+generateArticlePublishedDateTimestamps(folders)
 
 rssFeeder.generateRssFeed(src, root, feed, options)

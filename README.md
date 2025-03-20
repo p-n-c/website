@@ -57,4 +57,4 @@ To see the full yml script, go to [release_management.yml](https://github.com/p-
 
 ## How to update the RSS feed
 
-In the CLI run `node generate-rss-feed.js`
+In the CLI run `node node/generate-rss-feed.js`
