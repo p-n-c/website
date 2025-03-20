@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "performance, accessibility, sustainability, security, and ethics",
   "scripts": {
     "clean": "rm -rf dist && rm -rf .parcel-cache",
@@ -33,7 +33,9 @@
     "@eslint/js": "^9.8.0",
     "@p-n-c/rssfeed": "^0.0.4",
     "@parcel/packager-raw-url": "^2.12.0",
+    "@parcel/packager-xml": "^2.13.3",
     "@parcel/transformer-jsonld": "^2.12.0",
+    "@parcel/transformer-xml": "^2.13.3",
     "accessibility-checker": "^3.1.74",
     "cheerio": "^1.0.0",
     "eslint": "^9.8.0",
