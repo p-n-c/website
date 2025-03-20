@@ -10,7 +10,7 @@
       <link>https://people-and-code.com/</link>
     </image>
     <description>Latest articles from People and Code</description>
-    <lastBuildDate>Thu, 20 Mar 2025 11:36:35 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 20 Mar 2025 18:25:04 GMT</lastBuildDate>
     <language>en</language>
     <item>
       <title>Be more productive in VSCode</title>
@@ -111,6 +111,13 @@
       <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>Summary of the European AI Act for web development teams: compliance and preparation.]]></description>
       <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
       <guid>https://people-and-code.com/summary-of/eu-ai-act</guid>
+    </item>
+    <item>
+      <title>Page title</title>
+      <link>https://people-and-code.com/test/test</link>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>meta description]]></description>
+      <pubDate>Thu, 20 Mar 2025 18:24:57 GMT</pubDate>
+      <guid>https://people-and-code.com/test/test</guid>
     </item>
     <item>
       <title>An All-Purpose API</title>
