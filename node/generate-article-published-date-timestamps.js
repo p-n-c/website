@@ -3,9 +3,6 @@
 import fs from 'fs'
 import path from 'path'
 
-// Define the folders to process
-const folders = ['src/how-to', 'src/summary-of', 'src/thoughts-on']
-
 // Get the current timestamp in the desired format
 const currentTime = new Date().toISOString()
 
@@ -41,7 +38,7 @@ function addMetaTag(filePath) {
   })
 }
 
-export const generateArticlePublishedDateTimestamps = () => {
+export const generateArticlePublishedDateTimestamps = (folders) => {
   // Iterate through the folders and process each file
   folders.forEach((folder) => {
     fs.readdir(folder, (err, files) => {

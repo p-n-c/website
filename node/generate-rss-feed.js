@@ -19,6 +19,9 @@ const options = {
   pathsToExclude: ['/'],
 }
 
-generateArticlePublishedDateTimestamps()
+// Define the folders to process
+const folders = ['src/how-to', 'src/summary-of', 'src/thoughts-on']
+
+generateArticlePublishedDateTimestamps(folders)
 
 rssFeeder.generateRssFeed(src, root, feed, options)
