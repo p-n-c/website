@@ -3,3 +3,5 @@ dist
 .parcel-cache
 results
 CODE_STYLE.md
+.gemini
+artefacts

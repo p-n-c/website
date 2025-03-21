@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <atom:link href="https://people-and-code.com/" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://people-and-code.com//feed.rss" rel="self" type="application/rss+xml"/>
     <title>People and Code, At Your Disposal</title>
     <link>https://people-and-code.com/</link>
     <image>
@@ -10,20 +10,20 @@
       <link>https://people-and-code.com/</link>
     </image>
     <description>Latest articles from People and Code</description>
-    <lastBuildDate>Thu, 20 Mar 2025 10:59:13 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 21 Mar 2025 14:25:59 GMT</lastBuildDate>
     <language>en</language>
     <item>
       <title>Be more productive in VSCode</title>
       <link>https://people-and-code.com/how-to/be-more-productive-in-vscode</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>VSCode Tips]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/377123353/medium.jpeg"/>VSCode Tips]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/how-to/be-more-productive-in-vscode</guid>
     </item>
     <item>
       <title>How to break down monolithic apps</title>
       <link>https://people-and-code.com/how-to/break-down-monolithic-apps</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>Break down monolithic apps into parts that serve a single purpose]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/383034896/medium.jpeg"/>Break down monolithic apps into parts that serve a single purpose]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/how-to/break-down-monolithic-apps</guid>
     </item>
     <item>
@@ -31,64 +31,64 @@
       How to Build a Chrome Extension to Track Web Page CO2 Emissions
     </title>
       <link>https://people-and-code.com/how-to/build-a-chrome-extension-to-track-web-page-co2-emissions</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>How-to guide to building a Chrome extension that tracks CO2 emissions from web pages.]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380055355/medium.jpeg"/>How-to guide to building a Chrome extension that tracks CO2 emissions from web pages.]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/how-to/build-a-chrome-extension-to-track-web-page-co2-emissions</guid>
     </item>
     <item>
       <title>Build and distribute a Chrome extension</title>
       <link>https://people-and-code.com/how-to/build-and-distribute-a-chrome-extension</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>How to build and distribute a Chrome extension]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/303783597/medium.jpeg"/>How to build and distribute a Chrome extension]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/how-to/build-and-distribute-a-chrome-extension</guid>
     </item>
     <item>
       <title>How to create a GitHub action</title>
       <link>https://people-and-code.com/how-to/create-a-github-action</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>How to create a GitHub action using a workflow and a repository secret]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/383009501/medium.jpeg"/>How to create a GitHub action using a workflow and a repository secret]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/how-to/create-a-github-action</guid>
     </item>
     <item>
       <title>How to create a GitHub pull request template</title>
       <link>https://people-and-code.com/how-to/create-a-github-pull-request-template</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>How to create a GitHub pull request template using a markdown file]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380052441/medium.jpeg"/>How to create a GitHub pull request template using a markdown file]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/how-to/create-a-github-pull-request-template</guid>
     </item>
     <item>
       <title>How to create a repository secret in GitHub</title>
       <link>https://people-and-code.com/how-to/create-a-github-repository-secret</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>How to create a repository secret for a personal access token in GitHub]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/347809155/medium.jpeg"/>How to create a repository secret for a personal access token in GitHub]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/how-to/create-a-github-repository-secret</guid>
     </item>
     <item>
       <title>Create a VS Code snippet</title>
       <link>https://people-and-code.com/how-to/create-a-snippet</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>How to create a VS Code snippet]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/383034896/medium.jpeg"/>How to create a VS Code snippet]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/how-to/create-a-snippet</guid>
     </item>
     <item>
       <title>Publish using GitHub Pages</title>
       <link>https://people-and-code.com/how-to/publish-to-github-pages</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>How to publish a website using GitHub Pages]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/377207333/medium.jpeg"/>How to publish a website using GitHub Pages]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/how-to/publish-to-github-pages</guid>
     </item>
     <item>
       <title>Review a Github pull request locally | People and Code</title>
       <link>https://people-and-code.com/how-to/review-a-github-pull-request-locally</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>A comprehensive guide for reviewing GitHub pull requests locally]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/383034896/medium.jpeg"/>A comprehensive guide for reviewing GitHub pull requests locally]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/how-to/review-a-github-pull-request-locally</guid>
     </item>
     <item>
       <title>How to use GitHub actions</title>
       <link>https://people-and-code.com/how-to/use-github-actions</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>How to use GitHub actions]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/377211281/medium.jpeg"/>How to use GitHub actions]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/how-to/use-github-actions</guid>
     </item>
     <item>
@@ -101,50 +101,50 @@
     <item>
       <title>The European Accessibility Act</title>
       <link>https://people-and-code.com/summary-of/eu-accessibility-act</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>Summary of the European Accessibility Act]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/383009476/medium.jpeg"/>Summary of the European Accessibility Act]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/summary-of/eu-accessibility-act</guid>
     </item>
     <item>
       <title>Summary of the European AI Act</title>
       <link>https://people-and-code.com/summary-of/eu-ai-act</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>Summary of the European AI Act for web development teams: compliance and preparation.]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/386372408/medium.jpeg"/>Summary of the European AI Act for web development teams: compliance and preparation.]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/summary-of/eu-ai-act</guid>
     </item>
     <item>
       <title>An All-Purpose API</title>
       <link>https://people-and-code.com/thoughts-on/an-all-purpose-api</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>Thoughts on an All-Purpose API]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/377111345/medium.jpeg"/>Thoughts on an All-Purpose API]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/thoughts-on/an-all-purpose-api</guid>
     </item>
     <item>
       <title>Thoughts on... Contract-based Web Design | People and Code</title>
       <link>https://people-and-code.com/thoughts-on/contract-based-web-design</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>Contract-base Web Design]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/383009481/medium.jpeg"/>Contract-base Web Design]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/thoughts-on/contract-based-web-design</guid>
     </item>
     <item>
       <title>Escaping the labyrinth</title>
       <link>https://people-and-code.com/thoughts-on/escaping-the-labyrinth</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>How to navigate an interaction with an LLM without getting lost]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/377111345/medium.jpeg"/>How to navigate an interaction with an LLM without getting lost]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/thoughts-on/escaping-the-labyrinth</guid>
     </item>
     <item>
       <title>The colleague in an adjoining room</title>
       <link>https://people-and-code.com/thoughts-on/the-colleague-in-an-adjoining-room</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>Thoughts on how people in teams work together in the face of change]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/377201421/medium.jpeg"/>Thoughts on how people in teams work together in the face of change]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/thoughts-on/the-colleague-in-an-adjoining-room</guid>
     </item>
     <item>
       <title>The colleague with the Mona Lisa smile</title>
       <link>https://people-and-code.com/thoughts-on/the-colleague-with-the-mona-lisa-smile</link>
-      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/380047152/medium.jpeg"/>Thoughts on how we work with LLMs from People and Code]]></description>
-      <pubDate>Thu, 20 Mar 2025 10:38:44 GMT</pubDate>
+      <description><![CDATA[<img src="https://inaturalist-open-data.s3.amazonaws.com/photos/377207333/medium.jpeg"/>Thoughts on how we work with LLMs from People and Code]]></description>
+      <pubDate>Fri, 21 Mar 2025 09:36:59 GMT</pubDate>
       <guid>https://people-and-code.com/thoughts-on/the-colleague-with-the-mona-lisa-smile</guid>
     </item>
   </channel>
