@@ -33,13 +33,6 @@ const injectOpenGraphMetadata = (filePath, img) => {
 }
 
 export const addOpenGraphImageToFile = (imageURLs, folders) => {
-  // Define the image object
-  const img = {
-    url: getRandomImageURL(imageURLs),
-    width: '1200',
-    height: '630',
-  }
-
   // Iterate through the folders and process each file
   folders.forEach((folder) => {
     fs.readdir(folder, (err, files) => {
@@ -48,6 +41,12 @@ export const addOpenGraphImageToFile = (imageURLs, folders) => {
         return
       }
       files.forEach((file) => {
+        // Define the image object
+        const img = {
+          url: getRandomImageURL(imageURLs),
+          width: '1200',
+          height: '630',
+        }
         const filePath = path.join(folder, file)
         if (file.endsWith('.html')) {
           injectOpenGraphMetadata(filePath, img)
